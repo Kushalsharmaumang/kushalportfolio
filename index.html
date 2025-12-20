@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kushal Sharma | Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Kushal Sharma – Full Stack Developer (React, Java, Spring Boot)" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>body{font-family:'Poppins',sans-serif}</style>
+  <style>
+    body{font-family:'Poppins',sans-serif}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
+    @keyframes floatSlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-50px)}}
+    @keyframes gradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+    .animate-float{animation:float 6s ease-in-out infinite}
+    .animate-float-slow{animation:floatSlow 10s ease-in-out infinite}
+    .animate-gradient{background-size:400% 400%;animation:gradient 15s ease infinite}
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100 overflow-x-hidden">
+
+<!-- Animated Background -->
+<div class="fixed inset-0 -z-10">
+  <div class="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-purple-600/20 to-pink-600/20 animate-gradient"></div>
+  <div class="absolute w-72 h-72 bg-indigo-500/30 rounded-full blur-3xl top-10 left-10 animate-float"></div>
+  <div class="absolute w-96 h-96 bg-purple-500/30 rounded-full blur-3xl bottom-10 right-10 animate-float-slow"></div>
+</div>
+
+
+<!-- Navbar -->
+<header class="fixed w-full bg-gray-900/80 backdrop-blur z-50">
+  <nav class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+    <h1 class="text-xl font-bold text-indigo-400">Kushal</h1>
+    <ul class="flex gap-6 text-sm">
+      <li><a href="#home" class="hover:text-indigo-400">Home</a></li>
+      <li><a href="#skills" class="hover:text-indigo-400">Skills</a></li>
+      <li><a href="#projects" class="hover:text-indigo-400">Projects</a></li>
+      <li><a href="#experience" class="hover:text-indigo-400">Experience</a></li>
+      <li><a href="#contact" class="hover:text-indigo-400">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section id="home" class="min-h-screen flex items-center justify-center text-center px-6">
+  <div class="max-w-3xl">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Full Stack Developer</h2>
+    <p class="text-gray-400 mb-6">React • Java • Spring Boot • MySQL</p>
+    <p class="mb-8">Entry-level Full Stack Developer passionate about building responsive web apps and scalable backend systems.</p>
+    <a href="#projects" class="bg-indigo-500 hover:bg-indigo-600 px-6 py-3 rounded-xl font-semibold shadow-lg">View My Work</a>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="py-20 bg-gray-900">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-bold mb-10 text-center">Skills</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-gray-800 p-6 rounded-2xl shadow">
+        <h4 class="font-semibold mb-4 text-indigo-400">Frontend</h4>
+        <p>HTML5, CSS3, JavaScript, React.js, Tailwind CSS</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-2xl shadow">
+        <h4 class="font-semibold mb-4 text-indigo-400">Backend</h4>
+        <p>Java, Spring Boot, Hibernate (JPA), REST APIs, J2EE</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-2xl shadow">
+        <h4 class="font-semibold mb-4 text-indigo-400">Database & Tools</h4>
+        <p>MySQL, WordPress, Elementor, Git (Basic)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-bold mb-10 text-center">Projects</h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-gray-900 p-6 rounded-2xl shadow">
+        <h4 class="text-xl font-semibold mb-2">Shaadi Planner (Live)</h4>
+        <p class="text-gray-400 mb-4">Responsive service-based platform with improved navigation and UI.</p>
+        <a href="https://shaadiplanner.in/" target="_blank" class="text-indigo-400 hover:underline">Visit Project</a>
+      </div>
+      <div class="bg-gray-900 p-6 rounded-2xl shadow">
+        <h4 class="text-xl font-semibold mb-2">Insurance Management System</h4>
+        <p class="text-gray-400 mb-4">Java Spring Boot app with CRUD APIs and MySQL integration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="py-20 bg-gray-900">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-bold mb-10 text-center">Experience</h3>
+    <div class="space-y-6">
+      <div class="bg-gray-800 p-6 rounded-2xl">
+        <h4 class="font-semibold">Software Engineer Intern – Saivyy Technologies</h4>
+        <p class="text-gray-400 text-sm">Sep 2025 – Nov 2025</p>
+        <p class="mt-2">Worked on responsive UI, backend support, and API integration.</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-2xl">
+        <h4 class="font-semibold">WordPress Developer – Mreations Pvt. Ltd.</h4>
+        <p class="text-gray-400 text-sm">Jan 2024 – Jul 2025</p>
+        <p class="mt-2">Developed and customized client websites using WordPress and Elementor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-20 text-center">
+  <h3 class="text-3xl font-bold mb-6">Contact Me</h3>
+  <p class="mb-4">📧 kushalsharmaumang007@gmail.com</p>
+  <p class="mb-8">📞 7457847117 | Noida, UP</p>
+  <a href="mailto:kushalsharmaumang007@gmail.com" class="bg-indigo-500 hover:bg-indigo-600 px-6 py-3 rounded-xl font-semibold">Hire Me</a>
+</section>
+
+<footer class="py-6 text-center text-gray-500 text-sm">© 2025 Kushal Sharma. All rights reserved.</footer>
+
+</body>
+</html>
