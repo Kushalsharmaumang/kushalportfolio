@@ -3,122 +3,493 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kushal Sharma | Full Stack Developer</title>
-  <meta name="description" content="Portfolio of Kushal Sharma – Full Stack Developer (React, Java, Spring Boot)" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Kushal Sharma | Software Developer</title>
+  <meta name="description" content="Portfolio of Kushal Sharma – Software Developer (React, Java, Spring Boot)" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>body{font-family:'Poppins',sans-serif}</style>
   <style>
-    body{font-family:'Poppins',sans-serif}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
-    @keyframes floatSlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-50px)}}
+    *{font-family:'Inter',sans-serif;scroll-behavior:smooth}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-20px) rotate(5deg)}}
+    @keyframes floatSlow{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-30px) rotate(-5deg)}}
     @keyframes gradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-    .animate-float{animation:float 6s ease-in-out infinite}
-    .animate-float-slow{animation:floatSlow 10s ease-in-out infinite}
-    .animate-gradient{background-size:400% 400%;animation:gradient 15s ease infinite}
+    @keyframes pulse-glow{0%,100%{box-shadow:0 0 20px rgba(99,102,241,0.3)}50%{box-shadow:0 0 40px rgba(99,102,241,0.6)}}
+    @keyframes slide-up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    .animate-float{animation:float 8s ease-in-out infinite}
+    .animate-float-slow{animation:floatSlow 12s ease-in-out infinite}
+    .animate-gradient{background-size:400% 400%;animation:gradient 20s ease infinite}
+    .animate-pulse-glow{animation:pulse-glow 3s ease-in-out infinite}
+    .animate-slide-up{animation:slide-up 0.8s ease-out forwards}
+    .glass{background:rgba(255,255,255,0.05);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1)}
+    .glass-card{background:rgba(255,255,255,0.03);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.08);transition:all 0.3s ease}
+    .glass-card:hover{background:rgba(255,255,255,0.08);border:1px solid rgba(99,102,241,0.3);transform:translateY(-5px)}
+    .gradient-text{background:linear-gradient(135deg,#6366f1,#a855f7,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .nav-link{position:relative}
+    .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:linear-gradient(90deg,#6366f1,#a855f7);transition:width 0.3s ease}
+    .nav-link:hover::after{width:100%}
+    .skill-bar{height:6px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden}
+    .skill-progress{height:100%;background:linear-gradient(90deg,#6366f1,#a855f7);border-radius:3px;transition:width 1s ease}
+    .timeline-line{position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#6366f1,#a855f7,#ec4899)}
+    .timeline-dot{width:16px;height:16px;background:linear-gradient(135deg,#6366f1,#a855f7);border-radius:50%;position:absolute;left:0;border:3px solid #0f172a}
   </style>
 </head>
-<body class="bg-gray-950 text-gray-100 overflow-x-hidden">
+<body class="bg-slate-950 text-gray-100 overflow-x-hidden">
 
 <!-- Animated Background -->
 <div class="fixed inset-0 -z-10">
-  <div class="absolute inset-0 bg-gradient-to-br from-indigo-600/20 via-purple-600/20 to-pink-600/20 animate-gradient"></div>
-  <div class="absolute w-72 h-72 bg-indigo-500/30 rounded-full blur-3xl top-10 left-10 animate-float"></div>
-  <div class="absolute w-96 h-96 bg-purple-500/30 rounded-full blur-3xl bottom-10 right-10 animate-float-slow"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-indigo-950/50 via-purple-950/50 to-slate-950"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-indigo-600/10 via-purple-600/10 to-pink-600/10 animate-gradient"></div>
+  <div class="absolute w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl top-20 left-20 animate-float"></div>
+  <div class="absolute w-[500px] h-[500px] bg-purple-500/20 rounded-full blur-3xl bottom-20 right-20 animate-float-slow"></div>
+  <div class="absolute w-64 h-64 bg-pink-500/10 rounded-full blur-3xl top-1/2 left-1/2 animate-float"></div>
 </div>
 
-
 <!-- Navbar -->
-<header class="fixed w-full bg-gray-900/80 backdrop-blur z-50">
-  <nav class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-    <h1 class="text-xl font-bold text-indigo-400">Kushal</h1>
-    <ul class="flex gap-6 text-sm">
-      <li><a href="#home" class="hover:text-indigo-400">Home</a></li>
-      <li><a href="#skills" class="hover:text-indigo-400">Skills</a></li>
-      <li><a href="#projects" class="hover:text-indigo-400">Projects</a></li>
-      <li><a href="#experience" class="hover:text-indigo-400">Experience</a></li>
-      <li><a href="#contact" class="hover:text-indigo-400">Contact</a></li>
+<header class="fixed w-full glass z-50">
+  <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <h1 class="text-2xl font-bold gradient-text">Kushal</h1>
+    <ul class="flex gap-8 text-sm font-medium">
+      <li><a href="#home" class="nav-link hover:text-indigo-400 transition-colors">Home</a></li>
+      <li><a href="#about" class="nav-link hover:text-indigo-400 transition-colors">About</a></li>
+      <li><a href="#experience" class="nav-link hover:text-indigo-400 transition-colors">Experience</a></li>
+      <li><a href="#skills" class="nav-link hover:text-indigo-400 transition-colors">Skills</a></li>
+      <li><a href="#projects" class="nav-link hover:text-indigo-400 transition-colors">Projects</a></li>
+      <li><a href="#education" class="nav-link hover:text-indigo-400 transition-colors">Education</a></li>
+      <li><a href="#contact" class="nav-link hover:text-indigo-400 transition-colors">Contact</a></li>
     </ul>
   </nav>
 </header>
 
 <!-- Hero -->
-<section id="home" class="min-h-screen flex items-center justify-center text-center px-6">
-  <div class="max-w-3xl">
-    <h2 class="text-4xl md:text-5xl font-bold mb-4">Full Stack Developer</h2>
-    <p class="text-gray-400 mb-6">React • Java • Spring Boot • MySQL</p>
-    <p class="mb-8">Entry-level Full Stack Developer passionate about building responsive web apps and scalable backend systems.</p>
-    <a href="#projects" class="bg-indigo-500 hover:bg-indigo-600 px-6 py-3 rounded-xl font-semibold shadow-lg">View My Work</a>
-  </div>
-</section>
-
-<!-- Skills -->
-<section id="skills" class="py-20 bg-gray-900">
-  <div class="max-w-6xl mx-auto px-6">
-    <h3 class="text-3xl font-bold mb-10 text-center">Skills</h3>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-gray-800 p-6 rounded-2xl shadow">
-        <h4 class="font-semibold mb-4 text-indigo-400">Frontend</h4>
-        <p>HTML5, CSS3, JavaScript, React.js, Tailwind CSS</p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-2xl shadow">
-        <h4 class="font-semibold mb-4 text-indigo-400">Backend</h4>
-        <p>Java, Spring Boot, Hibernate (JPA), REST APIs, J2EE</p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-2xl shadow">
-        <h4 class="font-semibold mb-4 text-indigo-400">Database & Tools</h4>
-        <p>MySQL, WordPress, Elementor, Git (Basic)</p>
-      </div>
+<section id="home" class="min-h-screen flex items-center justify-center text-center px-6 pt-20">
+  <div class="max-w-4xl animate-slide-up">
+    <div class="mb-6">
+      <span class="inline-block px-4 py-2 rounded-full glass text-sm text-indigo-300 mb-6">👋 Welcome to my portfolio</span>
+    </div>
+    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+      <span class="gradient-text">Kushal Sharma</span>
+    </h1>
+    <h2 class="text-2xl md:text-3xl font-semibold text-gray-300 mb-6">Software Developer</h2>
+    <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+      Entry-level Developer with experience in React, frontend development, and REST APIs, along with basic Java knowledge. Interested in Frontend or Full Stack Developer roles.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4 mb-10">
+      <a href="#projects" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 px-8 py-4 rounded-2xl font-semibold shadow-lg animate-pulse-glow transition-all">View My Work</a>
+      <a href="#contact" class="glass px-8 py-4 rounded-2xl font-semibold hover:bg-white/10 transition-all">Contact Me</a>
+    </div>
+    <div class="flex justify-center gap-6 text-gray-400">
+      <a href="mailto:kushalsharmaumang007@gmail.com" class="hover:text-indigo-400 transition-colors">📧 Email</a>
+      <a href="tel:7457847117" class="hover:text-indigo-400 transition-colors">📞 Phone</a>
+      <a href="https://kushalsharmaumang.github.io/kushalportfolio/" target="_blank" class="hover:text-indigo-400 transition-colors">🌐 Portfolio</a>
     </div>
   </div>
 </section>
 
-<!-- Projects -->
-<section id="projects" class="py-20">
+<!-- About -->
+<section id="about" class="py-24">
   <div class="max-w-6xl mx-auto px-6">
-    <h3 class="text-3xl font-bold mb-10 text-center">Projects</h3>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-gray-900 p-6 rounded-2xl shadow">
-        <h4 class="text-xl font-semibold mb-2">Shaadi Planner (Live)</h4>
-        <p class="text-gray-400 mb-4">Responsive service-based platform with improved navigation and UI.</p>
-        <a href="https://shaadiplanner.in/" target="_blank" class="text-indigo-400 hover:underline">Visit Project</a>
-      </div>
-      <div class="bg-gray-900 p-6 rounded-2xl shadow">
-        <h4 class="text-xl font-semibold mb-2">Insurance Management System</h4>
-        <p class="text-gray-400 mb-4">Java Spring Boot app with CRUD APIs and MySQL integration.</p>
+    <div class="glass-card rounded-3xl p-8 md:p-12">
+      <h3 class="text-3xl md:text-4xl font-bold mb-8 gradient-text text-center">About Me</h3>
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <p class="text-gray-300 text-lg leading-relaxed mb-6">
+            I'm a passionate Software Developer with hands-on experience in building modern web applications. My journey in tech started with Full Stack Java Development training, and I've since worked on various projects ranging from WordPress websites to MERN stack applications.
+          </p>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            I thrive on solving complex problems and creating user-friendly interfaces. Currently working as a Graduate Trainee Engineer while continuously expanding my skills in frontend and full-stack development.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="glass rounded-2xl p-6 text-center">
+            <div class="text-3xl font-bold gradient-text">2+</div>
+            <div class="text-gray-400 text-sm">Years Experience</div>
+          </div>
+          <div class="glass rounded-2xl p-6 text-center">
+            <div class="text-3xl font-bold gradient-text">10+</div>
+            <div class="text-gray-400 text-sm">Projects Completed</div>
+          </div>
+          <div class="glass rounded-2xl p-6 text-center">
+            <div class="text-3xl font-bold gradient-text">3</div>
+            <div class="text-gray-400 text-sm">Companies Worked</div>
+          </div>
+          <div class="glass rounded-2xl p-6 text-center">
+            <div class="text-3xl font-bold gradient-text">100%</div>
+            <div class="text-gray-400 text-sm">Dedication</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Experience -->
-<section id="experience" class="py-20 bg-gray-900">
+<section id="experience" class="py-24 bg-slate-900/50">
   <div class="max-w-6xl mx-auto px-6">
-    <h3 class="text-3xl font-bold mb-10 text-center">Experience</h3>
-    <div class="space-y-6">
-      <div class="bg-gray-800 p-6 rounded-2xl">
-        <h4 class="font-semibold">Software Engineer Intern – Saivyy Technologies</h4>
-        <p class="text-gray-400 text-sm">Sep 2025 – Nov 2025</p>
-        <p class="mt-2">Worked on responsive UI, backend support, and API integration.</p>
+    <h3 class="text-3xl md:text-4xl font-bold mb-12 gradient-text text-center">Experience</h3>
+    <div class="space-y-8 pl-8 relative">
+      <div class="timeline-line"></div>
+      
+      <div class="relative pl-8 animate-slide-up" style="animation-delay:0.1s">
+        <div class="timeline-dot top-2"></div>
+        <div class="glass-card rounded-2xl p-6">
+          <div class="flex flex-wrap justify-between items-start mb-4">
+            <div>
+              <h4 class="text-xl font-bold text-indigo-400">Graduate Trainee Engineer</h4>
+              <p class="text-gray-400">Onkar Engine and Generators Pvt Ltd (Omega Appliances)</p>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-sm">Sep 2025 - Present</span>
+          </div>
+          <ul class="text-gray-300 space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-indigo-400 mt-1">•</span>
+              <span>Quality professional with experience in process quality control in a geyser manufacturing environment</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-indigo-400 mt-1">•</span>
+              <span>Ensuring defect identification and compliance with quality standards</span>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="bg-gray-800 p-6 rounded-2xl">
-        <h4 class="font-semibold">WordPress Developer – Mreations Pvt. Ltd.</h4>
-        <p class="text-gray-400 text-sm">Jan 2024 – Jul 2025</p>
-        <p class="mt-2">Developed and customized client websites using WordPress and Elementor.</p>
+
+      <div class="relative pl-8 animate-slide-up" style="animation-delay:0.2s">
+        <div class="timeline-dot top-2"></div>
+        <div class="glass-card rounded-2xl p-6">
+          <div class="flex flex-wrap justify-between items-start mb-4">
+            <div>
+              <h4 class="text-xl font-bold text-indigo-400">SWE Intern (Part-time)</h4>
+              <p class="text-gray-400">Saivyy Technologies Pvt Ltd</p>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-sm">Sep 2025 - Nov 2025</span>
+          </div>
+          <ul class="text-gray-300 space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-indigo-400 mt-1">•</span>
+              <span>Developed and maintained MERN stack applications</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-indigo-400 mt-1">•</span>
+              <span>Collaborated with team members to build responsive UI and database models</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="relative pl-8 animate-slide-up" style="animation-delay:0.3s">
+        <div class="timeline-dot top-2"></div>
+        <div class="glass-card rounded-2xl p-6">
+          <div class="flex flex-wrap justify-between items-start mb-4">
+            <div>
+              <h4 class="text-xl font-bold text-indigo-400">WordPress Developer</h4>
+              <p class="text-gray-400">Mreations Pvt Ltd</p>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-sm">Jan 2024 - Jul 2025</span>
+          </div>
+          <ul class="text-gray-300 space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-indigo-400 mt-1">•</span>
+              <span>Built and customized 10+ responsive WordPress websites using Elementor</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-indigo-400 mt-1">•</span>
+              <span>Improved site performance, UI responsiveness, and client satisfaction</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-indigo-400 mt-1">•</span>
+              <span>Worked directly with clients to convert requirements into live websites</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="relative pl-8 animate-slide-up" style="animation-delay:0.4s">
+        <div class="timeline-dot top-2"></div>
+        <div class="glass-card rounded-2xl p-6">
+          <div class="flex flex-wrap justify-between items-start mb-4">
+            <div>
+              <h4 class="text-xl font-bold text-indigo-400">Professional Training / Upskilling</h4>
+              <p class="text-gray-400">QSpiders, Noida</p>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-300 text-sm">Jul 2022 - Aug 2023</span>
+          </div>
+          <ul class="text-gray-300 space-y-2">
+            <li class="flex items-start gap-2">
+              <span class="text-indigo-400 mt-1">•</span>
+              <span>Full Stack Java Development training</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-indigo-400 mt-1">•</span>
+              <span>Hands-on training in Java, Spring Boot, MySQL, REST APIs, Frontend technologies</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl md:text-4xl font-bold mb-12 gradient-text text-center">Technical Skills</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <div class="glass-card rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-2xl">🎨</span>
+          <h4 class="font-semibold text-indigo-400">Frontend</h4>
+        </div>
+        <div class="space-y-3">
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span>HTML5/CSS3</span><span class="text-indigo-400">90%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width:90%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span>JavaScript</span><span class="text-indigo-400">80%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width:80%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span>React.js</span><span class="text-indigo-400">75%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width:75%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span>Tailwind CSS</span><span class="text-indigo-400">85%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width:85%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-2xl">⚙️</span>
+          <h4 class="font-semibold text-purple-400">Backend</h4>
+        </div>
+        <div class="space-y-3">
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span>Java</span><span class="text-purple-400">70%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width:70%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span>Spring Boot</span><span class="text-purple-400">65%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width:65%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span>Node.js</span><span class="text-purple-400">60%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width:60%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span>REST APIs</span><span class="text-purple-400">75%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width:75%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-2xl">🗄️</span>
+          <h4 class="font-semibold text-pink-400">Database & Tools</h4>
+        </div>
+        <div class="space-y-3">
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span>MySQL</span><span class="text-pink-400">75%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width:75%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span>WordPress</span><span class="text-pink-400">90%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width:90%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span>Elementor</span><span class="text-pink-400">85%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width:85%"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-sm mb-1">
+              <span>Git/GitHub</span><span class="text-pink-400">70%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" style="width:70%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 md:col-span-2 lg:col-span-3">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-2xl">💡</span>
+          <h4 class="font-semibold text-green-400">Concepts</h4>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <span class="px-4 py-2 rounded-full glass text-sm hover:bg-white/10 transition-colors">OOPs</span>
+          <span class="px-4 py-2 rounded-full glass text-sm hover:bg-white/10 transition-colors">MVC Architecture</span>
+          <span class="px-4 py-2 rounded-full glass text-sm hover:bg-white/10 transition-colors">CRUD Operations</span>
+          <span class="px-4 py-2 rounded-full glass text-sm hover:bg-white/10 transition-colors">Responsive Design</span>
+          <span class="px-4 py-2 rounded-full glass text-sm hover:bg-white/10 transition-colors">Hibernate (JPA)</span>
+          <span class="px-4 py-2 rounded-full glass text-sm hover:bg-white/10 transition-colors">J2EE</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="py-24 bg-slate-900/50">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl md:text-4xl font-bold mb-12 gradient-text text-center">Projects</h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      
+      <div class="glass-card rounded-3xl p-8 group">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">📊</span>
+          <h4 class="text-xl font-bold">Sales Performance Platform</h4>
+        </div>
+        <p class="text-gray-400 mb-6">Revenue infrastructure tool designed to help companies track and analyze sales performance metrics.</p>
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs">React</span>
+          <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs">Node.js</span>
+        </div>
+        <a href="http://43.242.224.215/" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 px-6 py-3 rounded-xl font-semibold transition-all group-hover:scale-105">
+          View Live Project
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
+
+      <div class="glass-card rounded-3xl p-8 group">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">💒</span>
+          <h4 class="text-xl font-bold">Shaadi Planner</h4>
+        </div>
+        <p class="text-gray-400 mb-6">Web platform for exploring marriage halls and catering services with improved navigation and UI.</p>
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs">WordPress</span>
+          <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs">Elementor</span>
+          <span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-xs">Plugins</span>
+        </div>
+        <a href="https://shaadiplanner.in/" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 px-6 py-3 rounded-xl font-semibold transition-all group-hover:scale-105">
+          Visit Website
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl md:text-4xl font-bold mb-12 gradient-text text-center">Education</h3>
+    <div class="grid md:grid-cols-2 gap-8">
+      
+      <div class="glass-card rounded-2xl p-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center text-2xl">
+            🎓
+          </div>
+          <div>
+            <h4 class="text-xl font-bold">B.Tech (Electronics & Communication)</h4>
+            <p class="text-indigo-400">SRMSCET, Bareilly</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 text-gray-400">
+          <span class="px-3 py-1 rounded-full glass text-sm">2018 - 2022</span>
+          <span>📍 Bareilly, Uttar Pradesh</span>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-8">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-2xl">
+            📚
+          </div>
+          <div>
+            <h4 class="text-xl font-bold">Full Stack Java Development</h4>
+            <p class="text-purple-400">QSpiders, Noida</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 text-gray-400">
+          <span class="px-3 py-1 rounded-full glass text-sm">Jul 2022 - Aug 2023</span>
+          <span>📍 Noida, Uttar Pradesh</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-12 glass-card rounded-2xl p-8">
+      <h4 class="text-xl font-bold mb-6 gradient-text">Languages</h4>
+      <div class="flex flex-wrap gap-4">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">🇮🇳</span>
+          <span class="text-gray-300">Hindi - Native</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">🇬🇧</span>
+          <span class="text-gray-300">English - Professional</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Contact -->
-<section id="contact" class="py-20 text-center">
-  <h3 class="text-3xl font-bold mb-6">Contact Me</h3>
-  <p class="mb-4">📧 kushalsharmaumang007@gmail.com</p>
-  <p class="mb-8">📞 7457847117 | Noida, UP</p>
-  <a href="mailto:kushalsharmaumang007@gmail.com" class="bg-indigo-500 hover:bg-indigo-600 px-6 py-3 rounded-xl font-semibold">Hire Me</a>
+<section id="contact" class="py-24 bg-slate-900/50">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h3 class="text-3xl md:text-4xl font-bold mb-6 gradient-text">Let's Work Together</h3>
+    <p class="text-gray-400 text-lg mb-12">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+    
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <a href="mailto:kushalsharmaumang007@gmail.com" class="glass-card rounded-2xl p-6 group hover:scale-105 transition-transform">
+        <div class="text-4xl mb-4">📧</div>
+        <h4 class="font-semibold mb-2">Email</h4>
+        <p class="text-gray-400 text-sm break-all">kushalsharmaumang007@gmail.com</p>
+      </a>
+      
+      <a href="tel:7457847117" class="glass-card rounded-2xl p-6 group hover:scale-105 transition-transform">
+        <div class="text-4xl mb-4">📞</div>
+        <h4 class="font-semibold mb-2">Phone</h4>
+        <p class="text-gray-400 text-sm">+91 7457847117</p>
+      </a>
+      
+      <div class="glass-card rounded-2xl p-6 group hover:scale-105 transition-transform">
+        <div class="text-4xl mb-4">📍</div>
+        <h4 class="font-semibold mb-2">Location</h4>
+        <p class="text-gray-400 text-sm">Noida, Uttar Pradesh</p>
+      </div>
+    </div>
+
+    <a href="mailto:kushalsharmaumang007@gmail.com" class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500 px-10 py-4 rounded-2xl font-semibold text-lg shadow-lg animate-pulse-glow transition-all hover:scale-105">
+      Get In Touch
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+    </a>
+  </div>
 </section>
 
-<footer class="py-6 text-center text-gray-500 text-sm">© 2025 Kushal Sharma. All rights reserved.</footer>
+<!-- Footer -->
+<footer class="py-8 text-center border-t border-white/10">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-gray-500 text-sm"> 2025 Kushal Sharma. All rights reserved.</p>
+    <p class="text-gray-600 text-xs mt-2">Built with using modern web technologies</p>
+  </div>
+</footer>
 
 </body>
 </html>
